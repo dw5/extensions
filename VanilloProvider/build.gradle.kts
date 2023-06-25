@@ -4,7 +4,7 @@ version = 2
 cloudstream {
     // All of these properties are optional, you can safely remove them
 
-    description = "Watch content from any invidious instance"
+    description = "Watch content from Vanillo.tv"
     authors = listOf("Cloudburst")
 
     /**
@@ -20,5 +20,5 @@ cloudstream {
     // You can find a list of avaliable types here:
     // https://recloudstream.github.io/cloudstream/html/app/com.lagradost.cloudstream3/-tv-type/index.html
     tvTypes = listOf("Others")
-    iconUrl = "https://www.google.com/s2/favicons?domain=invidious.io&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=Vanillo.io&sz=%size%"
 }

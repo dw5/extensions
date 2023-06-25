@@ -7,9 +7,9 @@ import com.lagradost.cloudstream3.utils.Qualities
 import com.lagradost.cloudstream3.utils.loadExtractor
 import java.net.URLEncoder
 
-class InvidiousProvider : MainAPI() { // all providers must be an instance of MainAPI
-    override var mainUrl = "https://y.com.sb"
-    override var name = "Invidious" // name of provider
+class VanilloProvider : MainAPI() { // all providers must be an instance of MainAPI
+    override var mainUrl = "https://vanillo2app.0x8676.workers.dev"
+    override var name = "Vanillo" // name of provider
     override val supportedTypes = setOf(TvType.Others)
 
     override var lang = "en"
@@ -61,7 +61,7 @@ class InvidiousProvider : MainAPI() { // all providers must be an instance of Ma
         val title: String,
         val videoId: String
     ) {
-        fun toSearchResponse(provider: InvidiousProvider): SearchResponse {
+        fun toSearchResponse(provider: VanilloProvider): SearchResponse {
             return provider.newMovieSearchResponse(
                 title,
                 "${provider.mainUrl}/watch?v=$videoId",
@@ -80,7 +80,7 @@ class InvidiousProvider : MainAPI() { // all providers must be an instance of Ma
         val author: String,
         val authorThumbnails: List<Thumbnail>
     ) {
-        suspend fun toLoadResponse(provider: InvidiousProvider): LoadResponse {
+        suspend fun toLoadResponse(provider: VanilloProvider): LoadResponse {
             return provider.newMovieLoadResponse(
                 title,
                 "${provider.mainUrl}/watch?v=$videoId",
@@ -111,14 +111,14 @@ class InvidiousProvider : MainAPI() { // all providers must be an instance of Ma
         callback: (ExtractorLink) -> Unit
     ): Boolean {
         loadExtractor(
-            "https://youtube.com/watch?v=$data",
+            "https://vanillo.tv/v/$data",
             subtitleCallback,
             callback
         )
         callback(
             ExtractorLink(
-                "Invidious",
-                "Invidious",
+                "Vanillo",
+                "Vanillo",
                 "$mainUrl/api/manifest/dash/id/$data",
                 "",
                 Qualities.Unknown.value,
