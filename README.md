@@ -1,5 +1,7 @@
 # Cloudstream extensions : Vanillous
 
+Install by adding `https://github.com/dw5/extensions/raw/master/repo.json`  
+
 This repository contains a collection of extensions for [Cloudstream3](https://github.com/recloudstream/cloudstream)
 
 ## Attribution
